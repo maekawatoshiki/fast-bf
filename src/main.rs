@@ -1,6 +1,7 @@
 use std::{fs, path::PathBuf};
-
 use structopt::StructOpt;
+
+mod inst;
 
 #[derive(StructOpt, Debug)]
 #[structopt(name = "fbf", about = "Run brainf*ck faster")]
