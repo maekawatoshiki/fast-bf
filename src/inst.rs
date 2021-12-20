@@ -1,9 +1,11 @@
+#[derive(Debug)]
 pub enum Inst {
-    ValAdd,
-    ValSub,
-    PtrAdd,
-    PtrSub,
+    ValAdd(u32),
+    ValSub(u32),
+    PtrAdd(u32),
+    PtrSub(u32),
     In,
     Out,
-    Jmp(u32),
+    JmpIfZero(i32),
+    Jmp(i32),
 }

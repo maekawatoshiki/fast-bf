@@ -1,6 +1,7 @@
 use std::{fs, path::PathBuf};
 use structopt::StructOpt;
 
+mod compile;
 mod inst;
 
 #[derive(StructOpt, Debug)]
@@ -12,5 +13,7 @@ struct Opt {
 
 fn main() {
     let opt = Opt::from_args();
-    let _code = fs::read_to_string(opt.path).expect("failed to load file");
+    let code = fs::read_to_string(opt.path).expect("failed to load file");
+    let insts = compile::compile(code);
+    println!("{:?}", insts);
 }
